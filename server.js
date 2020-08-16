@@ -62,20 +62,31 @@ app.post('/confiantuser2', function(req, res) {
     res.json(confiant);
   });
 });
-//
+//put modifier la valeur is confident 
 app.put('/updateIsConfident/:id', async function(req, res) {
  try {
 
    const user= await utilisateur.update(
       { isConfident: req.body.isConfident  },
-      { where: { id: req.params.id } }
+      { where: { id: req.params.id } } //where id hia el id passé en parametre f requette url
     )
     return res.status(200).json({ user });
  } catch (err) {
  return  res.status(500).json({ user: null, error: err });
  }
    });
-
+ 
+//fetch liste des utilisateurs témoins qui sont confiants 
+app.get('/favoriteliste', (request, res) => {
+  utilisateur.findAll({
+   where:{ isConfident: '1'}
+  })
+  
+  .then(results => {
+    
+    res.json(results)
+  })
+})
  
 
   

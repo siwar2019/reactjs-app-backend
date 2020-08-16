@@ -48,7 +48,7 @@ module.exports = db.sequelize.define(
         type: Sequelize.STRING
       },
       isConfident: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.TINYINT
       },
     
   },
