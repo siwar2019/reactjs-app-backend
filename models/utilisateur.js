@@ -47,6 +47,9 @@ module.exports = db.sequelize.define(
       position: {
         type: Sequelize.STRING
       },
+      isConfident: {
+        type: Sequelize.BOOLEAN
+      },
     
   },
   {
