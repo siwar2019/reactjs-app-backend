@@ -2,14 +2,14 @@ const Sequelize = require('sequelize')
 const db = require('../database/db.js')
 
 module.exports = db.sequelize.define(
-  'image',
+  'incident',
   {
     id: {
       type: Sequelize.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    filePath: {
+    image: {
       type: Sequelize.STRING
     },
     video: {
@@ -25,10 +25,15 @@ module.exports = db.sequelize.define(
     position: {
       type: Sequelize.STRING
     },
+    email: {
+      type: Sequelize.STRING
+    },
     
     
   },
   {
     timestamps: false
   }
+  
 )
+

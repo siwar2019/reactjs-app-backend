@@ -3,7 +3,7 @@ const confiant = require("../models/confiant")
 
 exports.confiantuser = (req, res) => {
   const id = req.params.id;
-//eni 7echti b table utilisateur
+
   confiant.delete({
     where: { id:id}
   })

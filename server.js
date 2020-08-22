@@ -2,8 +2,7 @@ const user = require('./models/User')
 const test = require('./models/Select')
 const utilisateur = require('./models/utilisateur')
 const confiant = require('./models/confiant')
-const image = require('./models/Image')
-//
+const incident = require('./models/Incident')
 
 var express = require('express')
 var cors = require('cors')
@@ -54,7 +53,12 @@ app.get('/utilisateur', (request, res) => {
     res.json(results)
   })
 })
-//
+//new incident affiche all 
+app.get('/incident', (request, res) => {
+  incident.findAll().then(results => {
+    res.json(results)
+  })
+})
 
 
 app.post('/confiantuser2', function(req, res) {

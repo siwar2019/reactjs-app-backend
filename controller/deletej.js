@@ -1,6 +1,7 @@
-//hh
+//import model utilisateur
 const user = require("../models/utilisateur")
 
+//fonction deletej pour bloquer témoins
 exports.deletej = (req, res) => {
   const id = req.params.id;
 //eni 7echti b table utilisateur
